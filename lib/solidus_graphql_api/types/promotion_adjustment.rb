@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class PromotionAdjustment < Base::RelayNode
+    class PromotionAdjustment < Base::Object
       implements Types::Interfaces::Adjustment
 
       description 'PromotionAdjustment.'

@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class Property < Base::RelayNode
+    class Property < Base::Object
       description 'Property.'
 
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true

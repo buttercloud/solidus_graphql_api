@@ -3,33 +3,27 @@
 module SolidusGraphqlApi
   module Types
     class Query < Base::Object
-      # Used by Relay to lookup objects by UUID:
-      field :node, field: GraphQL::Relay::Node.field
-
-      # Fetches a list of objects given a list of UUIDs
-      field :nodes, field: GraphQL::Relay::Node.plural_field
-
-      field :countries, Country.connection_type,
+      field :countries, [Types::Country],
             null: false,
             description: 'Supported Countries.'
 
-      field :completed_orders, Order.connection_type,
+      field :completed_orders, [Types::Order],
             null: false,
             description: 'Customer Completed Orders.'
 
-      field :products, Product.connection_type,
+      field :products, [Types::Product],
             null: false,
             description: 'Supported Products.' do
               argument :query, Types::InputObjects::ProductsQueryInput, required: false
             end
 
-      field :product_by_slug, Product,
+      field :product_by_slug, Types::Product,
             null: true,
             description: 'Find a product by its slug.' do
               argument :slug, String, required: true
             end
 
-      field :taxonomies, Taxonomy.connection_type,
+      field :taxonomies, [Types::Taxonomy],
             null: false,
             description: 'Supported Taxonomies.'
 

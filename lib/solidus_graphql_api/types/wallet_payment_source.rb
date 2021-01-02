@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class WalletPaymentSource < Base::RelayNode
+    class WalletPaymentSource < Base::Object
       description 'Wallet Payment Source.'
 
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true

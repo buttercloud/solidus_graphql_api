@@ -2,12 +2,12 @@
 
 module SolidusGraphqlApi
   module Types
-    class Order < Base::RelayNode
+    class Order < Base::Object
       description 'Order.'
 
       field :additional_tax_total, String, null: false
       field :adjustment_total, String, null: false
-      field :adjustments, Types::Interfaces::Adjustment.connection_type, null: false
+      field :adjustments, [Types::Interfaces::Adjustment], null: false
       field :approved_at, GraphQL::Types::ISO8601DateTime, null: true
       field :billing_address, Address, null: true
       field :canceled_at, GraphQL::Types::ISO8601DateTime, null: true
@@ -19,7 +19,7 @@ module SolidusGraphqlApi
       field :guest_token, String, null: true
       field :included_tax_total, String, null: false
       field :item_total, String, null: false
-      field :line_items, LineItem.connection_type, null: false
+      field :line_items, [Types::LineItem], null: false
       field :number, String, null: false
       field :available_payment_methods, [PaymentMethod], null: false
       field :payment_state, String, null: false
@@ -28,7 +28,7 @@ module SolidusGraphqlApi
       field :promo_total, String, null: false
       field :shipment_state, String, null: false
       field :shipment_total, String, null: false
-      field :shipments, Shipment.connection_type, null: false
+      field :shipments, [Types::Shipment], null: false
       field :shipping_address, Address, null: true
       field :special_instructions, String, null: true
       field :state, String, null: false

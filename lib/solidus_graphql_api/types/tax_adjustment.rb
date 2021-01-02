@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class TaxAdjustment < Base::RelayNode
+    class TaxAdjustment < Base::Object
       implements Types::Interfaces::Adjustment
 
       description 'TaxAdjustment.'

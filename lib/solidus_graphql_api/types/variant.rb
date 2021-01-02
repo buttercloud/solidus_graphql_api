@@ -2,18 +2,18 @@
 
 module SolidusGraphqlApi
   module Types
-    class Variant < Base::RelayNode
+    class Variant < Base::Object
       description 'Variant.'
 
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true
       field :default_price, Price, null: false
       field :depth, String, null: true
       field :height, String, null: true
-      field :images, Types::Image.connection_type, null: false
+      field :images, [Types::Image], null: false
       field :is_master, Boolean, null: false
-      field :option_values, OptionValue.connection_type, null: false
+      field :option_values, [Types::OptionValue], null: false
       field :position, Int, null: false
-      field :prices, Price.connection_type, null: false
+      field :prices, [Types::Price], null: false
       field :sku, String, null: false
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: true
       field :weight, String, null: false

@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class ShippingRate < Base::RelayNode
+    class ShippingRate < Base::Object
       description 'Shipping Rate.'
 
       field :cost, String, null: false

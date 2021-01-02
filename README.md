@@ -3,9 +3,11 @@
 [![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_graphql_api.svg?style=svg)](https://circleci.com/gh/solidusio-contrib/solidus_graphql_api)
 [![Gem Version](https://badge.fury.io/rb/solidus_graphql_api.svg)](https://badge.fury.io/rb/solidus_graphql_api)
 
-# SolidusGraphqlApi
+# SolidusGraphqlApi non-Relay
 
 Provides a [graphql](https://graphql.org/) api for the [Solidus](https://github.com/solidusio/solidus) ecommerce framework.
+
+This fork does not implement Relay.
 
 ## Installation
 
@@ -127,7 +129,7 @@ First we create a StockItem type:
 ```ruby
 module Graphql
   module Types
-    class StockItem < SolidusGraphqlApi::Types::Base::RelayNode
+    class StockItem < SolidusGraphqlApi::Types::Base::Object
       description 'StockItem.'
 
       field :count_on_hand, Integer, null: false

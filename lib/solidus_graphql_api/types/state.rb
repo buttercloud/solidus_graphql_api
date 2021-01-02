@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class State < Base::RelayNode
+    class State < Base::Object
       description 'State.'
 
       field :name, String, null: false

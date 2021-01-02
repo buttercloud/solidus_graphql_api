@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class CreditCard < Base::RelayNode
+    class CreditCard < Base::Object
       implements Types::Interfaces::PaymentSource
 
       description 'Credit Card.'

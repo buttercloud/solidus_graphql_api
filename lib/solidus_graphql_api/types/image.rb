@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class Image < Base::RelayNode
+    class Image < Base::Object
       description 'Image.'
 
       field :alt, String, null: true

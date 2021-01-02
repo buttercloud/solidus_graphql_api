@@ -2,12 +2,12 @@
 
 module SolidusGraphqlApi
   module Types
-    class Taxonomy < Base::RelayNode
+    class Taxonomy < Base::Object
       description 'Taxonomy.'
 
       field :name, String, null: false
       field :root_taxon, Taxon, null: true
-      field :taxons, Taxon.connection_type, null: false
+      field :taxons, [Types::Taxon], null: false
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: true
 

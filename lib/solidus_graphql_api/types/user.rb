@@ -2,10 +2,10 @@
 
 module SolidusGraphqlApi
   module Types
-    class User < Base::RelayNode
+    class User < Base::Object
       description 'User.'
 
-      field :addresses, Types::Address.connection_type, null: false
+      field :addresses, [Types::Address], null: false
       field :bill_address, Types::Address, null: true
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true
       field :current_sign_in_at, GraphQL::Types::ISO8601DateTime, null: true
@@ -17,7 +17,7 @@ module SolidusGraphqlApi
       field :sign_in_count, Integer, null: false
       field :spree_api_key, String, null: true
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: true
-      field :wallet, Types::WalletPaymentSource.connection_type, method: :wallet_payment_sources, null: false
+      field :wallet, Types::WalletPaymentSource, method: :wallet_payment_sources, null: false
     end
   end
 end

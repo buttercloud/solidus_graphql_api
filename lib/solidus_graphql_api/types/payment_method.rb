@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class PaymentMethod < Base::RelayNode
+    class PaymentMethod < Base::Object
       description 'Payment Method.'
 
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true

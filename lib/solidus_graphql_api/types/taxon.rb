@@ -2,10 +2,10 @@
 
 module SolidusGraphqlApi
   module Types
-    class Taxon < Base::RelayNode
+    class Taxon < Base::Object
       description 'Taxon.'
 
-      field :children, Taxon.connection_type, null: true
+      field :children, [Types::Taxon], null: true
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true
       field :description, String, null: true
       field :icon_url, String, null: true

@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class Price < Base::RelayNode
+    class Price < Base::Object
       description 'Price.'
 
       field :amount, String, null: false

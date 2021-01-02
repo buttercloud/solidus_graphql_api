@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class Currency < Base::RelayNode
+    class Currency < Base::Object
       description 'Currency.'
 
       field :html_entity, String, null: false

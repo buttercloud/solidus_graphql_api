@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class OptionType < Base::RelayNode
+    class OptionType < Base::Object
       graphql_name 'OptionType'
 
       description 'OptionType Type.'
@@ -10,7 +10,7 @@ module SolidusGraphqlApi
       field :name, String, null: false
       field :presentation, String, null: false
       field :position, Int, null: false
-      field :option_values, OptionValue.connection_type, null: false
+      field :option_values, [Types::OptionValue], null: false
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: true
 

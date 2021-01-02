@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class OptionValue < Base::RelayNode
+    class OptionValue < Base::Object
       description 'OptionValue.'
 
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true

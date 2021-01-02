@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class LineItem < Base::RelayNode
+    class LineItem < Base::Object
       description 'Line item.'
 
       field :additional_tax_total, Float, null: false

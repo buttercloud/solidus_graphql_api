@@ -2,7 +2,7 @@
 
 module SolidusGraphqlApi
   module Types
-    class Address < Base::RelayNode
+    class Address < Base::Object
       description 'Address.'
 
       field :address1, String, null: false
