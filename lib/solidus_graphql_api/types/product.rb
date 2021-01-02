@@ -5,6 +5,7 @@ module SolidusGraphqlApi
     class Product < Base::Object
       description 'Product.'
 
+      field :id, Integer, null: false
       field :created_at, GraphQL::Types::ISO8601DateTime, null: true
       field :description, String, null: true
       field :master_variant, Variant, null: false
